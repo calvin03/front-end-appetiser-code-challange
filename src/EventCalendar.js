@@ -12,7 +12,7 @@ export default function EventCalendar(){
 
     useEffect(() => {
 
-        axios.get(`http://localhost:8000/api/event-list`)
+        axios.get(`https://murmuring-retreat-33974.herokuapp.com/api/event-list`)
         .then(res => {
           const event_list = res.data.data;
 

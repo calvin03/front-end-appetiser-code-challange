@@ -13,7 +13,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Appbar from './AppBar'
 toast.configure({
   autoClose: 2000,
   draggable: false,
@@ -70,7 +70,7 @@ return true
 
 
     if (isValidate == true) {
-    axios.post(`http://localhost:8000/api/add-event`, { eventForm })
+    axios.post(`https://murmuring-retreat-33974.herokuapp.com/api/add-event`, { eventForm })
     .then(res => {
       if(res){
 
@@ -88,6 +88,7 @@ return true
   const classes = useStyles()
   return (
     <div className="App">
+      <Appbar />
 
       <Container maxWidth="lg">
         <Grid container  spacing={0}>

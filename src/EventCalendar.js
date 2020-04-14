@@ -28,8 +28,8 @@ export default function EventCalendar(){
         <div>
 
         <FullCalendar defaultView="dayGridMonth" plugins={[ dayGridPlugin ]}
-        
-        
+       nextDayThreshold={'00:00:00'}
+       allDay={false}
         events={eventsList}
         />
         </div>

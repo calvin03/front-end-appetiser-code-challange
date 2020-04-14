@@ -68,17 +68,29 @@ return true
   function submitForm(){
     const isValidate = validate();
 
+    let from_date = new Date(eventForm.from)
+    let to_date = new Date(eventForm.to)
+    console.log(from_date < to_date);
+
 
     if (isValidate == true) {
-    axios.post(`https://murmuring-retreat-33974.herokuapp.com/api/add-event`, { eventForm })
-    .then(res => {
-      if(res){
 
-        toast.success('Success Adding Event');
-
-        window.location.replace('/')
+      if(from_date <= to_date){
+        axios.post(`https://murmuring-retreat-33974.herokuapp.com/api/add-event`, { eventForm })
+        .then(res => {
+          if(res){
+    
+            toast.success('Success Adding Event');
+    
+            window.location.replace('/')
+          }
+        })
       }
-    })
+      else{
+        toast.error("End date must be greater than start date");
+
+      }
+  
   }
   }
 

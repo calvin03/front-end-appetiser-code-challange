@@ -92,7 +92,7 @@ return true
 
       <Container maxWidth="lg">
         <Grid container  spacing={0}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} lg={6}>
 
           <TextField id="standard-basic" label="Event Name" name="event" style={{width : '80%'}}               onChange={handleChange}
  />
@@ -128,7 +128,7 @@ return true
         Add Event
 </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} lg={6}>
             <EventCalendar />
           </Grid>
         </Grid>
